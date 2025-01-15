@@ -1,3 +1,9 @@
+variable "env_prefix" {
+  description = "Prefix for environment-specific resources"
+  type        = string
+  default     = "dev" 
+}
+
 # ====================================== VPC
 variable "vpc_cidr" {
   type = string
@@ -17,7 +23,7 @@ variable "public02_subnet_cidr" {
   description = "public02_subnet_cidr"
 }
 
-variable "tag_env" {
+variable "vpc_name" {
   type = string
   default = "cluster_demo"
   description = "tag"
@@ -28,6 +34,33 @@ variable "instance_tenancy" {
   default = "default"
   description = "tag"
 }
+
+variable "public01_subnet_name" {
+  type = string
+  default = "cluster_public01_subnet"
+  description = "public01_subnet_name"
+}
+
+variable "public02_subnet_name" {
+  type = string
+  default = "cluster_public02_subnet"
+  description = "public02_subnet_name"
+}
+
+variable "public_route_table_name" {
+  type = string
+  default = "cluster_rt"
+  description = "public_route_table_name"
+}
+
+variable "eks_igw_name" {
+  type = string
+  default = "cluster_igw"
+  description = "eks_igw_name"
+}
+
+
+
 # ====================================== EKS IAM role for cluster
 variable "cluster-role-name" {
   type = string

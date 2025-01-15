@@ -1,3 +1,8 @@
+variable "env_prefix" {
+  description = "Prefix for environment-specific resources"
+  type        = string
+}
+
 variable "role-name" {
   type = string
   default = "eks-cluster-role"

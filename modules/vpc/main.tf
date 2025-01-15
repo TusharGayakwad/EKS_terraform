@@ -3,9 +3,10 @@ resource "aws_vpc" "eks_demo" {
   instance_tenancy = var.instance_tenancy
 
   tags = {
-    Name = var.tag_env
+    Name = "${var.env_prefix}-${var.vpc_name}"
   }
 }
+
 
 # Public Subnet 1 Creation
 resource "aws_subnet" "public_subnet_1" {
@@ -14,7 +15,7 @@ resource "aws_subnet" "public_subnet_1" {
   map_public_ip_on_launch = true  
 
   tags = {
-    Name = var.tag_env
+    Name = "${var.env_prefix}-${var.public01_subnet_name}"
   }
 }
 
@@ -24,7 +25,7 @@ resource "aws_subnet" "public_subnet_2" {
   cidr_block              = var.public02_subnet_cidr
   map_public_ip_on_launch = true   
   tags = {
-    Name = var.tag_env
+    Name = "${var.env_prefix}-${var.public02_subnet_name}"
   }
 }
 
@@ -32,7 +33,7 @@ resource "aws_internet_gateway" "eks_igw" {
   vpc_id = aws_vpc.eks_demo.id
 
   tags = {
-    Name = var.tag_env
+    Name = "${var.env_prefix}-${var.eks_igw_name}"
   }
 }
 
@@ -46,7 +47,7 @@ resource "aws_route_table" "public_route_table" {
   }
 
   tags = {
-    Name = var.tag_env
+    Name = "${var.env_prefix}-${var.public_route_table_name}"
   }
 }
 

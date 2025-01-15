@@ -1,9 +1,18 @@
+#==== Environment-specific prefix ==========#
+env_prefix = "dev"
+
+
 #============== VPC ==============#
-vpc_cidr            = "10.0.0.0/16" 
-public01_subnet_cidr  = "10.0.1.0/24"  
-public02_subnet_cidr = "10.0.2.0/24"    
-tag_env             = "dev" 
-instance_tenancy = "default"
+vpc_cidr                = "10.0.0.0/16" 
+public01_subnet_cidr    = "10.0.1.0/24"  
+public02_subnet_cidr    = "10.0.2.0/24"    
+vpc_name                = "cluster_vpc" 
+public01_subnet_name    = "cluster_public01_subnet"
+public02_subnet_name    = "cluster_public02_subnet"
+public_route_table_name = "cluster_rt"
+eks_igw_name            =  "cluster_igw"
+instance_tenancy        = "default"
+
 
 #============== CLuster IAM ==============#
 
