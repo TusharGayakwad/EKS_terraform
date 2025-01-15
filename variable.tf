@@ -4,16 +4,16 @@ variable "vpc_cidr" {
   description = "vpc_cidr"
 }
 
-variable "public_subnet_cidr" {
+variable "public01_subnet_cidr" {
   type = string
   default = "10.0.1.0/24"
-  description = "public_subnet_cidr"
+  description = "public01_subnet_cidr"
 }
 
-variable "private_subnet_cidr" {
+variable "public02_subnet_cidr" {
   type = string
   default = "10.0.2.0/24"
-  description = "private_subnet_cidr"
+  description = "public02_subnet_cidr"
 }
 
 variable "tag_env" {

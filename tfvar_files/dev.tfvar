@@ -1,11 +1,5 @@
-# VPC CIDR block
 vpc_cidr            = "10.0.0.0/16" 
-
-# Public Subnet CIDR block
-public_subnet_cidr  = "10.0.1.0/24"  
-
-# Private Subnet CIDR block
-private_subnet_cidr = "10.0.2.0/24"    
-
-# Environment tag for the VPC and subnets
-tag_env             = "dev"     
+public01_subnet_cidr  = "10.0.1.0/24"  
+public02_subnet_cidr = "10.0.2.0/24"    
+tag_env             = "dev" 
+instance_tenancy = "default"
