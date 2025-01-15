@@ -1,5 +1,24 @@
+#============== VPC ==============#
 vpc_cidr            = "10.0.0.0/16" 
 public01_subnet_cidr  = "10.0.1.0/24"  
 public02_subnet_cidr = "10.0.2.0/24"    
 tag_env             = "dev" 
 instance_tenancy = "default"
+
+#============== CLuster IAM ==============#
+
+cluster-role-name          = "eks-cluster-role"
+cluster-assume-role-service = "eks.amazonaws.com"
+cluster-policy-arns = [
+  "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+]
+
+#============== Node group role ==============#
+
+node-role-name          = "eks-node-group-role"
+node-assume-role-service = "ec2.amazonaws.com"
+node-policy_arns = [
+  "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy",
+  "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy",
+  "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+]
