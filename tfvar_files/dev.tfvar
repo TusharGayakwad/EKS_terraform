@@ -31,3 +31,7 @@ node-policy_arns = [
   "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy",
   "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
 ]
+
+
+sg_name = "cluster-sg"
+ingress_ports = [22, 80, 443, 8080]

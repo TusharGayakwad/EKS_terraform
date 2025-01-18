@@ -30,3 +30,12 @@ module "node_group_role" {
   assume-role-service = var.node-assume-role-service
   policy_arns        = var.node-policy_arns
 }
+
+module "aws_security_group" {
+  source             = "./modules/security_group"
+
+  env_prefix = var.env_prefix
+  sg_name = var.sg_name
+  vpc_id = module.vpc.vpc_id
+  ingress_ports = var.ingress_ports
+}

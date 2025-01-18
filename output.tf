@@ -25,3 +25,7 @@ output "eks_cluster_role_arn" {
 output "node_group_role_arn" {
   value = module.node_group_role.role_arn
 }
+
+output "sg_id" {
+  value = module.aws_security_group.sg_id
+}

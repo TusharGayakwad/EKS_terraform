@@ -93,3 +93,16 @@ variable "node-policy_arns" {
   description = "List of IAM policy ARNs to attach to the role"
   type        = list(string)
 }
+# =======================
+
+variable "sg_name" {
+  description = "Role-specific identifier for the Security Group"
+  type        = string
+  default     = "sg_eks"
+}
+
+variable "ingress_ports" {
+  description = "List of ports to allow for inbound traffic"
+  type        = list(number)
+  default     = [ ] 
+}
